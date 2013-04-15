@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Giraffa Gallery</title>
+        <style>
+
+            /* Demo styles */
+            html,body{background:#222;margin:0;}
+            body{border-top:4px solid #000;}
+            .content{color:#777;font:12px/1.4 "helvetica neue",arial,sans-serif;width:620px;margin:20px auto;}
+            h1{font-size:12px;font-weight:normal;color:#ddd;margin:0;}
+            p{margin:0 0 20px}
+            a {color:#22BCB9;text-decoration:none;}
+            .cred{margin-top:20px;font-size:11px;}
+
+            /* This rule is read by Galleria to define the gallery height: */
+            #galleria{height:320px;}
+
+        </style>
+        <style type="text/css">
+* { margin:0;
+    padding:0;
+}
+html { background:#444; }
+body {
+   /* margin:50px auto;
+    width:630px;
+    height:466px;
+    background:#222;
+    overflow:hidden;*/
+}
+div#menu {
+	top:25px;	  
+}
+div#content{border:0px solid red;height:500px;padding:40px 20px;width:80%;margin:0 auto;}
+div#copyright { display: none; }
+h1 {color:white;font-family:"Arial Black";font-weight:normal;}
+</style>
+    <link type="text/css" href="/GiraffaHome/menu.css" rel="stylesheet" />
+    <script type="text/javascript" src="/GiraffaHome/js/jquery.js"></script>
+    <script type="text/javascript" src="/GiraffaHome/js/menu.js"></script>
+
+	<!-- load jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+
+	<!-- load Galleria -->
+	<script src="./galleria-1.2.9.min.js"></script>
+
+	<!-- load flickr plugin -->
+	<script src="galleria.flickr.min.js"></script>
+
+</head>
+<body>
+<a href="./index.html"><img alt="logo" src="./images/logo.png"></a>
+<div id="menu">
+    <ul class="menu">
+        <li><a href="index.html" class="parent"><span>Home</span></a></li>
+        <li><a href="about.html" class="parent"><span>About</span></a></li>
+        <li><a href="life.html"><span>Life</span></a></li>
+        <li><a href="gallery.html"><span>image Gallery</span></a></li>
+         <li class="last"><a href="email.html"><span>e-mail</span></a></li>
+         
+         <li><a href="aboutus.html" ><span>about us</span></a></li>
+         <li><a href="contactus.html"><span>contact us</span></a></li>
+         
+        
+    </ul>
+</div>
+<div class="content">
+    <!-- Adding gallery images. This is just a container for the dynamic flickr images -->
+    <div id="galleria"></div>
+    <br>
+    <img src="./images/cartoon.jpg">
+</div>
+<div class="cartoon">
+
+</div>
+<script>
+
+    // Load the classic theme
+    Galleria.loadTheme('./themes/classic/galleria.classic.min.js');
+
+    // Initialize Galleria
+    Galleria.run('#galleria', {
+
+        // search flickr for "galleria"
+        flickr: 'search:giraffa',
+        
+        flickrOptions: {
+            // sort by interestingness
+            sort: 'interestingness-desc'
+        }
+    });
+</script>
+</body>
+</html>

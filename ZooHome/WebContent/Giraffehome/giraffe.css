@@ -1,0 +1,24 @@
+* { margin:0;
+    padding:0;
+}
+html { background:#fff; }
+body {
+   /* margin:50px auto;
+    width:630px;
+    height:466px;
+    background:#222;
+    overflow:hidden;*/
+   color:#333;font-weight:bold;
+}
+div#menu {
+	top:25px;	  
+}
+div#content{border:0px solid red;height:500px;padding:40px 20px;width:80%;margin:0 auto;}
+div#copyright { display: none; }
+h1 {color:#666;font-family:"Arial Black";font-weight:normal;border-bottom:1px solid #777;margin-bottom:10px;}
+h2{color:lime;}
+a {color:orange;}
+a : link{color:orange;}
+a:visited{color:orange;}dth:80%;margin:0 auto;padding:20px;margin-bottom:50px;}
+
+.email td{padding:5px;}

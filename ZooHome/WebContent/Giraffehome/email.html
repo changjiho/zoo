@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>giraffe </title>
+    <link type="text/css" href="menu.css" rel="stylesheet" />
+    <link type="text/css" href="giraffe.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript">
+	    function sendMail() {
+	    	if(!ValidateEmail(userEmail1.value))
+	    	{return;}
+	        var link = "mailto:hjshin@naver.com"
+	                 + "?cc=" + userEmail1.value
+	                 + "&subject=" + qnaTitle.value
+	                 + "&body=" + questionText.value;
+	
+	        window.location.href = link;
+	    }
+	    
+	    function ValidateEmail(inputText)  
+	    {  
+	    	
+	       var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+	       if(inputText.match(mailformat))  
+	       {  
+	     
+	           return true;  
+	       }  
+	       else  
+	       {  
+	           alert("이메일 주소가 정확하지 않습니다. 다시 확인해 주세요.");  
+	          
+	           return false;  
+	       }  
+	    } 
+    </script>
+</head>
+<body>
+
+<a href="./index.html"><img alt="logo" src="./images/logo.png"></a>
+<div id="menu">
+    <ul class="menu">
+        <li><a href="index.html" class="parent"><span>Home</span></a></li>
+        <li><a href="about.html" class="parent"><span>About</span></a></li>
+        <li><a href="life.html"><span>Life</span></a></li>
+        <li><a href="gallery.html"><span>image Gallery</span></a></li>
+         <li class="last"><a href="email.html"><span>e-mail</span></a></li>
+         
+         <li><a href="aboutus.html" ><span>about us</span></a></li>
+         <li><a href="contactus.html"><span>contact us</span></a></li>
+         
+        
+    </ul>
+</div>
+<div id="content">
+	<h1>Send e-mail</h1>
+<table class="email" summary="1:1문의">
+		<colgroup>
+			<col width="20%">
+			<col width="80%">
+		</colgroup>
+		<tbody>
+		<tr>
+			<th>이메일</th>
+			<td>
+				<input type="hidden" id="userEmail" name="userEmail" value="">
+				<input type="text" id="userEmail1" name="userEmail1" value="" title="이메일 주소"  style="width: 400px;" class="sinput">
+				<!--@
+				<select name="emailSelector" id="emailSelector">
+					<option value="">직접입력</option>
+					<option value="chollian.net">chollian.net</option>
+					<option value="gmail.com">gmail.com</option>
+					<option value="hanmail.net">hanmail.net</option>
+					<option value="hotmail.com">hotmail.com</option>
+					<option value="msn.com">msn.com</option>
+					<option value="naver.com">naver.com</option>
+				</select>
+				<input type="text" id="userEmail2" name="userEmail2" value="" title="이메일 주소" size="20">-->
+			</td>
+		</tr>
+		<tr>
+			<th>제목</th>
+			<td><input type="text" id="qnaTitle" name="qnaTitle" value=""  style="width: 400px;" class="linput" maxlength="50"></td>
+		</tr>
+		<tr>
+			<th>내용</th>
+			<td><textarea name="questionText" id="questionText" cols="45" rows="5"  style="width: 400px;height:200px;" class="lselect"></textarea></td>
+		</tr>
+		<!-- tr>
+			<th>이미지 올리기</th>
+			<td>
+				<input type="password" id="input3" name="input3" value="" title="비밀번호 확인" size="40" />
+				<a href="#" class="btnS"><span>찾기</span></a>
+				<a href="#" class="btnS"><span>추가</span></a>
+				<a href="#" class="btnS"><span>삭제</span></a>
+			</td>
+		</tr-->				
+	</tbody></table>
+	<input type="button" onclick="sendMail()" value="Send Mail">
+	</div>
+</html>
